@@ -1,4 +1,4 @@
-from game_data import dogs
+from game_data import dogs, available_dogs
 
 def view_database():
 
@@ -28,3 +28,22 @@ def view_database():
     print("Age:", dog["age"])
     print("Energy:", dog["energy"])
     print("Assigned Yard:", dog["yard"])
+
+
+def view_directory():
+    if not available_dogs:
+        print("There are no dogs remaining in the directory.")
+        return
+
+    print("\n=== DOG DIRECTORY ===")
+    for index, dog in enumerate(available_dogs, start=1):
+        print(
+            "{}. {} - {}, {} lbs, age {}, {} energy".format(
+                index,
+                dog["name"],
+                dog["breed"],
+                dog["weight"],
+                dog["age"],
+                dog["energy"],
+            )
+        )

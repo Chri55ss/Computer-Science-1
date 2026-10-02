@@ -1,5 +1,6 @@
 import random
 from game_data import game
+from tips import offer_end_of_day_tip
 
 def random_event():
 
@@ -84,6 +85,8 @@ def random_event():
         game["money"] -= 25
 
 def end_day():
+
+    offer_end_of_day_tip()
 
     game["day"] += 1
     game["dogs_processed_today"] = 0
