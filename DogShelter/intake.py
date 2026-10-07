@@ -6,21 +6,15 @@ from intake_events import resolve_intake_event
 
 def process_dog_intake():
 
-    if game["dogs_processed_today"] >= game["capacity"]:
-        print("Shelter is full today.")
+    if game["intakes_today"] >= game["daily_intake_limit"]:
+        print("Today's intake limit has been reached.")
         return
 
     if not available_dogs:
-        print("There are no more dogs in the directory to offer.")
+        print("There are no more dogs available for intake.")
         return
 
     candidate = random.choice(available_dogs)
-    print("\n=== DOG INTAKE OFFER ===")
-    print("Name:", candidate["name"])
-    print("Breed:", candidate["breed"])
-    print("Weight:", candidate["weight"], "lbs")
-    print("Age:", candidate["age"])
-    print("Energy:", candidate["energy"])
 
     if candidate["weight"] < 20:
         yard = "Small Dog Yard"
@@ -29,14 +23,36 @@ def process_dog_intake():
     else:
         yard = "Large Dog Yard"
 
-    dog = dict(candidate, yard=yard)
+    dog = dict(
+        candidate,
+        yard=yard,
+        status="healthy",
+        issue_days=0,
+        happiness=50,
+        stay_days=random.randint(1, 3),
+    )
 
-    money_earned = round(dog["weight"] * 1.50, 2)
+    payment_per_pound = 1.50 + game.get("money_per_pound_bonus", 0)
+    care_payment = round(
+        dog["weight"] * payment_per_pound * dog["stay_days"], 2
+    )
+    dog["care_payment"] = care_payment
 
-    print("Assigned Yard:", dog["yard"])
-    print("Pay for accepting: ${:.2f}".format(money_earned))
-    print("Risk: 25% chance of $25 damage, 50% chance of no effect,")
-    print("or 25% chance of a $10 donation.")
+    print("\n" + "=" * 38)
+    print("          DOG INTAKE OFFER")
+    print("=" * 38)
+    print("DOG")
+    print("  Name:       {}".format(dog["name"]))
+    print("  Breed:      {}".format(dog["breed"]))
+    print("  Age:        {} years".format(dog["age"]))
+    print("  Weight:     {} lbs".format(dog["weight"]))
+    print("  Energy:     {}".format(dog["energy"].title()))
+    print("-" * 38)
+    print("CARE PLAN")
+    print("  Assigned yard: {}".format(dog["yard"]))
+    print("  Stay:          {} day(s)".format(dog["stay_days"]))
+    print("  Payment at checkout: ${:.2f}".format(care_payment))
+    print("=" * 38)
 
     while True:
         answer = input("Accept this dog? (yes/no): ").strip().lower()
@@ -44,17 +60,17 @@ def process_dog_intake():
             break
         print("Please answer yes or no.")
 
-    available_dogs.remove(candidate)
     if answer == "no":
         print("Dog was not accepted.")
         return
 
+    available_dogs.remove(candidate)
     dogs.append(dog)
 
-    game["money"] += money_earned
-    game["dogs_processed_today"] += 1
+    game["intakes_today"] += 1
     game["total_dogs"] += 1
 
-    print("Dog processed.")
-    print("Earned ${:.2f}".format(money_earned))
+    print("{} joined the shelter. Intake {}/{} today.".format(
+        dog["name"], game["intakes_today"], game["daily_intake_limit"]
+    ))
     resolve_intake_event(dog)

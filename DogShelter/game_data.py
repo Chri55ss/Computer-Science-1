@@ -1,10 +1,16 @@
 game = {
     "money": 100,
     "day": 1,
-    "capacity": 3,
-    "dogs_processed_today": 0,
-    "total_dogs": 0
+    "daily_intake_limit": 3,
+    "intakes_today": 0,
+    "shift": 0,
+    "total_dogs": 0,
+    "reviews": 0,
+    "money_per_pound_bonus": 0,
+    "money_per_pound_effect": None,
 }
+
+SHIFTS = ["Morning Intake", "Noon Shift", "Night Shift"]
 
 dogs = []
 
