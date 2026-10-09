@@ -5,8 +5,8 @@ print()
 
 def get_input(prompt):
     while True:
-        value = input(prompt).strip()  # string method used
-        if value:                      # validation
+        value = input(prompt).strip()  # removes extra whitespace
+        if value:
             return value
         print("Input cannot be blank.")
 
@@ -18,17 +18,42 @@ object_name = get_input("Object to sit on: ")
 color = get_input("Color: ")
 food = get_input("Food: ")
 
+# STRING METHOD EXAMPLES
+
+# split()
+name_parts = officer1.split()
+
+# use split result
+if len(name_parts) > 1:
+    first_name = name_parts[0]
+else:
+    first_name = officer1
+
+# find()
+space_position = officer1.find(" ")
+
+# slicing
+short_name = officer1[:10]
+
 print("\nDispatching officers...")
+
+if space_position != -1:
+    print(f"Detected a multi-word officer name. First name: {first_name}")
+else:
+    print("Single-word officer name detected.")
+
+print(f"Shortened name preview: {short_name}")
+
 time.sleep(1)
 
 story = f"""
-Officer {officer1} and their partner, Officer {officer2}, were on call on a Friday night when a mysterious subject called 911 regarding a fraternity hazing incident.
+Officer {first_name} and their partner, Officer {officer2}, were on call on a Friday night when a mysterious subject called 911 regarding a fraternity hazing incident.
 
 The officers arrived and entered the basement.
 
 Inside, two men were fully clothed while the others were wearing only {clothing}.
 
-"What is going on here?" asked Officer {officer1}.
+"What is going on here?" asked Officer {first_name}.
 
 The fraternity president, {president}, shrugged.
 
