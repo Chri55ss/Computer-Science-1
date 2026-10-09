@@ -3,13 +3,20 @@ import time
 print("=== THE GARGOYLE PLEDGE INCIDENT ===")
 print()
 
-officer1 = input("Officer 1 Name: ")
-officer2 = input("Officer 2 Name: ")
-president = input("Fraternity President: ")
-clothing = input("Piece of clothing: ")
-object_name = input("Object to sit on: ")
-color = input("Color: ")
-food = input("Food: ")
+def get_input(prompt):
+    while True:
+        value = input(prompt).strip()  # string method used
+        if value:                      # validation
+            return value
+        print("Input cannot be blank.")
+
+officer1 = get_input("Officer 1 Name: ")
+officer2 = get_input("Officer 2 Name: ")
+president = get_input("Fraternity President: ")
+clothing = get_input("Piece of clothing: ")
+object_name = get_input("Object to sit on: ")
+color = get_input("Color: ")
+food = get_input("Food: ")
 
 print("\nDispatching officers...")
 time.sleep(1)
@@ -71,5 +78,4 @@ THE END
 """
 
 print(story)
-
 input("Press Enter to exit...")
