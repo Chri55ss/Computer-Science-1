@@ -1,0 +1,79 @@
+import random
+
+event = random.randint(1, 15)
+
+print("\n=== DAILY EVENT ===")
+
+if event == 1:
+    print("A generous donor visited the shelter!")
+    money += 75
+    print("You received $75.")
+
+elif event == 2:
+    print("A local business sponsored your shelter.")
+    money += 150
+    print("You received $150.")
+
+elif event == 3:
+    print("One of the kennels needed repairs.")
+    money -= 50
+    print("Repairs cost $50.")
+
+elif event == 4:
+    print("A dog escaped and damaged a fence.")
+    money -= 80
+    print("Fence repairs cost $80.")
+
+elif event == 5:
+    print("Volunteers helped clean the shelter.")
+    print("Everything runs smoothly today.")
+
+elif event == 6:
+    print("The newspaper featured your shelter.")
+    money += 100
+    print("More donations arrived! +$100")
+
+elif event == 7:
+    print("A surprise inspection was completed.")
+    print("The shelter passed with no issues.")
+
+elif event == 8:
+    print("Food prices increased this week.")
+    money -= 40
+    print("Extra food costs $40.")
+
+elif event == 9:
+    print("A veterinarian donated supplies.")
+    money += 60
+    print("You saved $60 in expenses.")
+
+elif event == 10:
+    print("One of your water bowls cracked.")
+    money -= 15
+    print("Replacement cost $15.")
+
+elif event == 11:
+    print("A community fundraiser was held.")
+    money += 200
+    print("You raised $200.")
+
+elif event == 12:
+    print("Nothing unusual happened today.")
+    print("The dogs enjoyed a peaceful day.")
+
+elif event == 13:
+    print("A storm passed through town.")
+    money -= 70
+    print("Cleanup cost $70.")
+
+elif event == 14:
+    print("Several toys were donated.")
+    print("The dogs are very entertained today.")
+
+elif event == 15:
+    print("An adoption event brought attention to the shelter.")
+    money += 125
+    print("You received $125 in support.")
+
+if money < 0:
+    money = 0
