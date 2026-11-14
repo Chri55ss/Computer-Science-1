@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dog Shelter Manager 0.2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="shift-0">
+
+  <!-- ===================== TITLE SCREEN ===================== -->
+  <section id="title-screen" class="screen title-screen">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="title-sun"></div>
+
+    <div class="title-card">
+      <h1 class="logo">
+        <span class="logo-top">DOG SHELTER</span>
+        <span class="logo-bottom">MANAGER</span>
+      </h1>
+      <p class="tagline">Take in dogs. Keep them happy. Keep the lights on.</p>
+      <div class="title-menu">
+        <button class="btn btn-big btn-orange continue-btn" id="btn-continue" data-action="continue" hidden>
+          💾 Continue <small id="continue-info"></small></button>
+        <button class="btn btn-big btn-green" data-action="new-game">&#9654; New Game</button>
+        <button class="btn btn-big btn-blue" data-action="how-to">? How to Play</button>
+      </div>
+    </div>
+
+    <div class="title-ground">
+      <div class="parade" id="title-parade"></div>
+    </div>
+  </section>
+
+  <!-- ===================== GAME SCREEN ===================== -->
+  <section id="game-screen" class="screen game-screen" hidden>
+    <header class="hud">
+      <div class="hud-brand">🐾 <span>Dog Shelter</span></div>
+
+      <div class="hud-stats">
+        <div class="stat stat-day">
+          <span class="stat-label">Day</span>
+          <span class="stat-value" id="hud-day">1</span>
+        </div>
+        <div class="stat stat-shift">
+          <span class="stat-label">Shift</span>
+          <span class="stat-value" id="hud-shift">🌅 Morning</span>
+        </div>
+        <div class="stat stat-money">
+          <span class="stat-label">Money</span>
+          <span class="stat-value" id="hud-money">$100.00</span>
+        </div>
+        <div class="stat stat-reviews">
+          <span class="stat-label">Reviews</span>
+          <span class="stat-value" id="hud-reviews">⭐ 0</span>
+        </div>
+        <div class="stat stat-rate">
+          <span class="stat-label">Pay rate</span>
+          <span class="stat-value" id="hud-rate">$1.50/lb</span>
+        </div>
+        <div class="stat stat-staff">
+          <span class="stat-label">Staff</span>
+          <span class="stat-value" id="hud-staff">none</span>
+        </div>
+      </div>
+
+      <div class="hud-actions">
+        <button class="btn btn-yellow btn-intake-jump" data-action="jump-intake">🛎️ <span>Intake</span></button>
+        <button class="btn btn-purple" data-action="upgrades">🛒 <span>Upgrades</span></button>
+        <button class="btn btn-orange" id="btn-end-shift" data-action="end-shift">End Shift ➜</button>
+        <button class="btn btn-ghost btn-icon" data-action="menu" aria-label="Open menu">☰</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- MAIN: the assigned yards, one at a time -->
+      <main class="yards-main">
+        <div class="yard-nav">
+          <button class="btn btn-blue nav-arrow" data-action="yard-prev" aria-label="Previous yard">◀</button>
+          <div class="yard-tabs" id="yard-tabs"></div>
+          <button class="btn btn-blue nav-arrow" data-action="yard-next" aria-label="Next yard">▶</button>
+        </div>
+
+        <div class="yard-viewport">
+          <div class="yard-track" id="yard-track">
+            <div class="yard yard-small" data-yard="Small Dog Yard">
+              <div class="yard-sign">Small Dog Yard</div>
+              <div class="yard-empty">No small dogs yet</div>
+            </div>
+            <div class="yard yard-medium" data-yard="Medium Dog Yard">
+              <div class="yard-sign">Medium Dog Yard</div>
+              <div class="yard-empty">No medium dogs yet</div>
+            </div>
+            <div class="yard yard-large" data-yard="Large Dog Yard">
+              <div class="yard-sign">Large Dog Yard</div>
+              <div class="yard-empty">No large dogs yet</div>
+            </div>
+          </div>
+          <div class="night-overlay"></div>
+        </div>
+        <p class="hint" id="yard-hint">Click a dog to see its stats and give care.</p>
+
+        <h2 class="section-heading" id="cards-heading">Dogs in this yard</h2>
+        <div class="card-grid" id="dog-cards"></div>
+      </main>
+
+      <!-- SIDE: intake desk + log -->
+      <aside class="side">
+        <section class="panel desk-panel" id="intake-panel" aria-label="Intake desk">
+          <div class="panel-head">
+            <h2 id="panel-title">🛎️ Front Desk</h2>
+            <span class="desk-sign" id="desk-sign">OPEN</span>
+          </div>
+          <div class="desk-content" id="desk-content"></div>
+        </section>
+        <section class="panel log-panel" aria-label="Shelter log">
+          <h2>📜 Shelter Log</h2>
+          <ol class="log" id="log"></ol>
+        </section>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== OVERLAYS ===================== -->
+  <div class="modal-backdrop" id="modal-root" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <div class="banner" id="banner" hidden>
+    <div class="banner-inner">
+      <div class="banner-icon" id="banner-icon"></div>
+      <div class="banner-title" id="banner-title"></div>
+      <div class="banner-sub" id="banner-sub"></div>
+      <ul class="banner-lines" id="banner-lines"></ul>
+      <div class="banner-skip">click to continue</div>
+    </div>
+  </div>
+
+  <!-- Mini-games (broken fence, hole) -->
+  <div class="minigame" id="minigame" hidden></div>
+
+  <script src="game.js"></script>
+  <script src="yard.js"></script>
+  <script src="minigames.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>

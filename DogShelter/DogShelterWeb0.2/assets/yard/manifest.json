@@ -1,0 +1,472 @@
+{
+ "about": "Original pixel-art yard assets for DogShelterWeb. Draw with image-rendering: pixelated. Animated files are one row of equal frames.",
+ "scale_tip": "Draw each yard's toys at the same scale as that yard's dogs (small 1.9x, medium 2.4x, large 2.9x). Fence, grass and plants look right at about 2x-3x.",
+ "upgrade_slots": [
+  "bed",
+  "ball",
+  "chew",
+  "water",
+  "house",
+  "play",
+  "plush"
+ ],
+ "files": {
+  "fence/fence_section.png": {
+   "size": [
+    32,
+    32
+   ],
+   "note": "tiles left-to-right"
+  },
+  "fence/fence_section_heart.png": {
+   "size": [
+    32,
+    32
+   ],
+   "note": "swap in now and then"
+  },
+  "fence/fence_post.png": {
+   "size": [
+    32,
+    32
+   ],
+   "note": "drop between sections"
+  },
+  "fence/fence_end_left.png": {
+   "size": [
+    32,
+    32
+   ]
+  },
+  "fence/fence_end_right.png": {
+   "size": [
+    32,
+    32
+   ]
+  },
+  "fence/fence_gate.png": {
+   "size": [
+    64,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": [
+    "closed",
+    "open"
+   ]
+  },
+  "grass/grass_small_1.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_small_2.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_small_3.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_small_flowers.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_medium_1.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_medium_2.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_medium_3.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_medium_flowers.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_large_1.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_large_2.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_large_3.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/grass_large_flowers.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "grass/dirt_path.png": {
+   "size": [
+    32,
+    32
+   ],
+   "tile": true
+  },
+  "plants/tulips.png": {
+   "size": [
+    192,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/daisies.png": {
+   "size": [
+    192,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/sunflower.png": {
+   "size": [
+    192,
+    48
+   ],
+   "frame": [
+    32,
+    48
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/bluebells.png": {
+   "size": [
+    192,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/lavender.png": {
+   "size": [
+    192,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/tall_grass.png": {
+   "size": [
+    192,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/fern.png": {
+   "size": [
+    192,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/rose_bush.png": {
+   "size": [
+    192,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/dandelion.png": {
+   "size": [
+    192,
+    32
+   ],
+   "frame": [
+    32,
+    32
+   ],
+   "frames": 6,
+   "fps": 6,
+   "loop": "sway"
+  },
+  "plants/butterfly.png": {
+   "size": [
+    64,
+    16
+   ],
+   "frame": [
+    16,
+    16
+   ],
+   "frames": 4,
+   "fps": 10,
+   "loop": "flap - move it around in code"
+  },
+  "toys/small/bed.png": {
+   "size": [
+    28,
+    18
+   ],
+   "name": "Pink cushion bed"
+  },
+  "toys/small/chew.png": {
+   "size": [
+    16,
+    10
+   ],
+   "name": "Mini bone"
+  },
+  "toys/small/house.png": {
+   "size": [
+    30,
+    30
+   ],
+   "name": "Cottage dog house"
+  },
+  "toys/small/play.png": {
+   "size": [
+    34,
+    20
+   ],
+   "name": "Crinkle tunnel"
+  },
+  "toys/small/plush.png": {
+   "size": [
+    16,
+    16
+   ],
+   "name": "Squeaky duck"
+  },
+  "toys/small/ball.png": {
+   "size": [
+    48,
+    14
+   ],
+   "name": "Tennis ball",
+   "frame": [
+    12,
+    14
+   ],
+   "frames": 4,
+   "fps": 8,
+   "loop": "bounce"
+  },
+  "toys/small/water.png": {
+   "size": [
+    72,
+    12
+   ],
+   "name": "Little water bowl",
+   "frame": [
+    18,
+    12
+   ],
+   "frames": 4,
+   "fps": 4,
+   "loop": "shimmer"
+  },
+  "toys/medium/bed.png": {
+   "size": [
+    36,
+    20
+   ],
+   "name": "Comfy pillow bed"
+  },
+  "toys/medium/chew.png": {
+   "size": [
+    30,
+    12
+   ],
+   "name": "Rope tug"
+  },
+  "toys/medium/house.png": {
+   "size": [
+    38,
+    36
+   ],
+   "name": "Blue dog house"
+  },
+  "toys/medium/play.png": {
+   "size": [
+    32,
+    26
+   ],
+   "name": "Agility hurdle"
+  },
+  "toys/medium/plush.png": {
+   "size": [
+    22,
+    24
+   ],
+   "name": "Plush bunny"
+  },
+  "toys/medium/ball.png": {
+   "size": [
+    56,
+    16
+   ],
+   "name": "Rubber star ball",
+   "frame": [
+    14,
+    16
+   ],
+   "frames": 4,
+   "fps": 8,
+   "loop": "bounce"
+  },
+  "toys/medium/water.png": {
+   "size": [
+    96,
+    14
+   ],
+   "name": "Water bowl",
+   "frame": [
+    24,
+    14
+   ],
+   "frames": 4,
+   "fps": 4,
+   "loop": "shimmer"
+  },
+  "toys/large/bed.png": {
+   "size": [
+    46,
+    24
+   ],
+   "name": "Big bolster bed"
+  },
+  "toys/large/chew.png": {
+   "size": [
+    30,
+    24
+   ],
+   "name": "Chew tire"
+  },
+  "toys/large/house.png": {
+   "size": [
+    48,
+    44
+   ],
+   "name": "Barn dog house"
+  },
+  "toys/large/play.png": {
+   "size": [
+    60,
+    34
+   ],
+   "name": "A-frame ramp"
+  },
+  "toys/large/plush.png": {
+   "size": [
+    30,
+    30
+   ],
+   "name": "Giant teddy bear"
+  },
+  "toys/large/ball.png": {
+   "size": [
+    72,
+    20
+   ],
+   "name": "Beach ball",
+   "frame": [
+    18,
+    20
+   ],
+   "frames": 4,
+   "fps": 8,
+   "loop": "bounce"
+  },
+  "toys/large/water.png": {
+   "size": [
+    208,
+    26
+   ],
+   "name": "Kiddie pool",
+   "frame": [
+    52,
+    26
+   ],
+   "frames": 4,
+   "fps": 4,
+   "loop": "shimmer"
+  }
+ }
+}
